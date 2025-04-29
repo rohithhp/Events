@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us - Event Management</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 90%;
+      max-width: 800px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 40px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      border-radius: 10px;
+      position: relative;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      color: #555;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      resize: none;
+    }
+    textarea {
+      height: 150px;
+    }
+    button {
+      width: 100%;
+      padding: 14px;
+      background-color: #007BFF;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .info {
+      margin-top: 30px;
+      text-align: center;
+      color: #777;
+    }
+    .thank-you-message {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+
+    /* Show Thank You Message when URL hash is #thanks */
+    :target .form-content {
+      display: none;
+    }
+    :target .thank-you-message {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+<div id="thanks" class="container">
+  <h1>Contact Us</h1>
+
+  <div class="form-content">
+    <form action="#thanks" method="POST">
+      <div class="form-group">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Your Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-group">
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required>
+      </div>
+
+      <div class="form-group">
+        <label for="message">Your Message:</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+
+  <div class="thank-you-message">
+    <h2>Thank you!</h2>
+    <p>Your message has been sent successfully. We'll get back to you soon!</p>
+  </div>
+
+  <div class="info">
+    <p>Email: support@eventmanagement.com</p>
+    <p>Phone: +1 234 567 8900</p>
+    <p>Address: 123 Event Street, Party City, PC 12345</p>
+  </div>
+</div><br><br>
+<footer style="text-align: center; padding: 20px;">
+    <a href="home.html" style="margin: 0 15px; text-decoration: navy;">Home</a>
+    <a href="events.html" style="margin: 0 15px; text-decoration: navy;">Events</a>
+    <a href="register.html" style="margin: 0 15px; text-decoration: navy;">Register</a>
+  </footer>
+  
+</body>
+</html>
