@@ -19,7 +19,6 @@
       padding: 40px;
       box-shadow: 0 6px 12px rgba(0,0,0,0.1);
       border-radius: 10px;
-      position: relative;
     }
     h1 {
       text-align: center;
@@ -74,23 +73,15 @@
       border-radius: 8px;
       margin-top: 20px;
     }
-
-    /* Show Thank You Message when URL hash is #thanks */
-    :target .form-content {
-      display: none;
-    }
-    :target .thank-you-message {
-      display: block;
-    }
   </style>
 </head>
 <body>
 
-<div id="thanks" class="container">
+<div class="container">
   <h1>Contact Us</h1>
 
   <div class="form-content">
-    <form action="#thanks" method="POST">
+    <form id="contactForm">
       <div class="form-group">
         <label for="name">Your Name:</label>
         <input type="text" id="name" name="name" required>
@@ -115,7 +106,7 @@
     </form>
   </div>
 
-  <div class="thank-you-message">
+  <div class="thank-you-message" id="thankYouMsg">
     <h2>Thank you!</h2>
     <p>Your message has been sent successfully. We'll get back to you soon!</p>
   </div>
@@ -125,12 +116,22 @@
     <p>Phone: +1 234 567 8900</p>
     <p>Address: 123 Event Street, Party City, PC 12345</p>
   </div>
-</div><br><br>
+</div>
+
 <footer style="text-align: center; padding: 20px;">
-    <a href="home.html" style="margin: 0 15px; text-decoration: navy;">Home</a>
-    <a href="events.html" style="margin: 0 15px; text-decoration: navy;">Events</a>
-    <a href="register.html" style="margin: 0 15px; text-decoration: navy;">Register</a>
-  </footer>
-  
+  <a href="home.html" style="margin: 0 15px; color: navy; text-decoration: none;">Home</a>
+  <a href="events.html" style="margin: 0 15px; color: navy; text-decoration: none;">Events</a>
+  <a href="register.html" style="margin: 0 15px; color: navy; text-decoration: none;">Register</a>
+</footer>
+
+<script>
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault(); // Stop default POST behavior
+    document.querySelector(".form-content").style.display = "none";
+    document.getElementById("thankYouMsg").style.display = "block";
+    this.reset(); // Optional: reset form fields
+  });
+</script>
+
 </body>
 </html>
